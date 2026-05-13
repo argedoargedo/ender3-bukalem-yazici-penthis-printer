@@ -1,5 +1,7 @@
 
 # 🖨️ Ender 3 Bukalemun Yazıcı / Pen This Printer
+https://www.thingiverse.com/thing:7352596
+https://www.youtube.com/watch?v=NHBilCCeiWg
 
 **Ender 3'ünüzü kalemli bir plottere dönüştürün!**  
 Hershey fontları ile tek hatlı (single line) yazılar çizin. Türkçe karakter desteği ile `ğ`, `ü`, `ş`, `ı`, `ö`, `ç` gibi harfleri sorunsuz kullanın.
