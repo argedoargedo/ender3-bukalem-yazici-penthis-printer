@@ -61,3 +61,7 @@ python Ender3_yazi_yaz.py
 
 ( çıktıyı isterseniz https://ncviewer.com/ adresinde deneyebilirsiniz)
 
+###Hazır fontlar:
+hershey_cursive.json      #el yazısı
+hershey_rowmans.json      
+
