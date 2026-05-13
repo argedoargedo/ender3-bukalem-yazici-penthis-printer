@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+
+"""
+Hershey Font to JSON Converter
+========================================================================
+Converts Hershey font (single line) to JSON format for pen plotters.
+"""
+
+import json
+from HersheyFonts import HersheyFonts
+
+def generate_font_json(chars, font_name="cursive", scale=50, output="hershey_font.json"):
+    """
+    Generate JSON font file from Hershey font.
+    
+    Args:
+        chars (str): Characters to extract
+        font_name (str): Hershey font name (cursive, rowmans, etc.)
+        scale (int): Rendering scale (higher = larger)
+        output (str): Output JSON file name
+    """
+    hf = HersheyFonts()
+    hf.load_default_font(font_name)
+    hf.normalize_rendering(scale)
+    
+    font_data = {}
+    for ch in chars:
+        lines = list(hf.lines_for_text(ch))
+        if not lines:
+            print(f"⚠️ Warning: '{ch}' not found in font")
+            continue
+        
+        paths = []
+        current_path = []
+        for i, ((x1, y1), (x2, y2)) in enumerate(lines):
+            if i == 0 or (x1, y1) != (current_path[-1][0], current_path[-1][1]):
+                if current_path:
+                    paths.append(current_path)
+                current_path = [[x1, y1], [x2, y2]]
+            else:
+                current_path.append([x2, y2])
+        if current_path:
+            paths.append(current_path)
+        
+        font_data[ch] =paths
+    
+    with open(output, "w") as f:
+        json.dump(font_data, f, indent=2, ensure_ascii=False)
+    print(f"✅ {len(font_data)} characters saved to {output}")
+
+if __name__ == "__main__":
+    # Define which characters to include
+    # Uppercase + Lowercase + Turkish + Digits + Basic punctuation
+    chars = (
+        # Uppercase
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        # Lowercase
+        "abcdefghijklmnopqrstuvwxyz"
+        # Turkish characters
+        "ĞğİıÖöÜüÇçŞş"
+        # Digits
+        "0123456789"
+        # Basic punctuation and symbols
+        ".,:;!?\'\"'+-*/=()[]{}<>|@#$%&^\\~`=_"
+    )
+    generate_font_json(chars, "cursive", scale=100, output="hershey_cursive.json")
+    
+

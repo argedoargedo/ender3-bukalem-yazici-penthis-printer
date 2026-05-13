@@ -1,0 +1,9 @@
+ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# Lowercase
+"abcdefghijklmnopqrstuvwxyz"
+# Turkish characters
+"ĞğİıÖöÜüÇçŞş"
+# Digits
+"0123456789"
+# Basic punctuation and symbols
+".,:;!?'"'+-*/=()[]{}<>|@#$%&^\~`=_
