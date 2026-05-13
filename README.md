@@ -41,11 +41,14 @@ pip install Hershey-Fonts
 
 ###Font oluşturma:
 
+
+```bash
 python hershey_font2json.py 
 (Font tipi seçimi yazılımın içinde)
 
-###Ender3_yazi_yaz içindeki Ayarlar:
+###Ender3_yazi_yaz
 
+içindeki Ayarlar:
 FONT_FILE = "***.json"  		        # Kullanılacak font
 START_X = 10                        # Başlangıç X 
 START_Y = 220                       # Başlangıç Y 
@@ -56,8 +59,12 @@ LETTER_SPACING = 0.25 * SCALE / 10  # Harf aralığı
 LINE_SPACING = 13 * SCALE / 10      # Satır aralığı
 SPEED = 1000                        # Çizim hızı 
 
-###Output.gcode oluşturma:
-python Ender3_yazi_yaz.py 
+#Output.gcode oluşturma:
+
+```bash
+python ender3_yazi_yaz.py 
+
+
 
 ( çıktıyı isterseniz https://ncviewer.com/ adresinde deneyebilirsiniz)
 
