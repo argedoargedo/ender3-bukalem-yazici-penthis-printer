@@ -1,5 +1,8 @@
 
 # 🖨️ Ender 3 Bukalemun Yazıcı / Pen This Printer
+https://www.thingiverse.com/thing:7352596
+https://www.youtube.com/watch?v=NHBilCCeiWg
+
 
 **Turn your Ender 3 into a pen plotter!**  
 Draw single-line text using Hershey fonts. Supports Turkish characters like `ğ`, `ü`, `ş`, `ı`, `ö`, `ç`.
